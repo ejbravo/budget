@@ -1,19 +1,20 @@
 import React, { Fragment } from "react";
 import { Segment, Grid, Icon } from "semantic-ui-react";
 
-import { IEntry } from "../App";
+import { IEntry } from "../utils/interfaces";
+import { useDispatch } from "react-redux";
+import { deleteEntry, editEntry } from "../redux/actions/entryAction";
+import { openModal } from "../redux/actions/modalAction";
 
 interface IProps {
   entry: IEntry;
-  deleteEntry: (id: number) => void;
-  editEntry: (id: number) => void;
 }
 
 const EntryLine = ({
   entry: { id, description, value, isExpense = false },
-  deleteEntry,
-  editEntry,
 }: IProps) => {
+  const dispatch = useDispatch();
+
   return (
     <Fragment>
       <Segment color={isExpense ? "red" : "green"}>
@@ -26,12 +27,16 @@ const EntryLine = ({
               ${value}
             </Grid.Column>
             <Grid.Column width={3}>
-              <Icon name="edit" bordered onClick={() => editEntry(id)} />
+              <Icon
+                name="edit"
+                bordered
+                onClick={() => dispatch(openModal(id))}
+              />
               <Icon
                 name="trash"
                 bordered
                 color="red"
-                onClick={() => deleteEntry(id)}
+                onClick={() => dispatch(deleteEntry(id))}
               />
             </Grid.Column>
           </Grid.Row>

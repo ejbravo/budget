@@ -25,7 +25,7 @@ const EntryForm = ({
           label="Description"
           icon="tags"
           width={12}
-          placeholder="New shinny thing"
+          placeholder="New thing"
           value={description}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
             setDescription(event.target.value)

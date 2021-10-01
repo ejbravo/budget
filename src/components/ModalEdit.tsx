@@ -1,46 +1,39 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Button, Modal } from "semantic-ui-react";
 import EntryForm from "./EntryForm";
+import { closeModal } from "../redux/actions/modalAction";
+import useEntryDetails from "../hooks/useEntryDetails";
 
 interface IProps {
   isOpen: boolean;
-  toggle: () => void;
+  id: string;
   description: string;
-  value: string;
-  isExpense: boolean | undefined;
-  setDescription: React.Dispatch<React.SetStateAction<string>>;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
-  setIsExpense: React.Dispatch<React.SetStateAction<boolean>>;
-  addEntry: () => void;
+  value: number;
+  isExpense?: boolean | undefined;
 }
 
-const ModalEdit = ({
-  isOpen,
-  toggle,
-  description,
-  value,
-  isExpense,
-  setDescription,
-  setValue,
-  setIsExpense,
-  addEntry,
-}: IProps) => {
+const ModalEdit = ({ isOpen, id, description, value, isExpense }: IProps) => {
+  const dispatch = useDispatch();
+
+  const entry = useEntryDetails(description, value.toString(), isExpense);
+
   return (
     <Modal open={isOpen}>
       <Modal.Header>Edit Entry</Modal.Header>
       <Modal.Content>
         <EntryForm
-          description={description}
-          value={value}
-          isExpense={isExpense}
-          setDescription={setDescription}
-          setValue={setValue}
-          setIsExpense={setIsExpense}
+          description={entry.description}
+          value={entry.value}
+          isExpense={entry.isExpense}
+          setDescription={entry.setDescription}
+          setValue={entry.setValue}
+          setIsExpense={entry.setIsExpense}
         />
       </Modal.Content>
       <Modal.Actions>
-        <Button onClick={toggle}>Close</Button>
-        <Button onClick={toggle} primary>
+        <Button onClick={() => dispatch(closeModal())}>Close</Button>
+        <Button onClick={() => entry.updateEntry(id)} primary>
           Save
         </Button>
       </Modal.Actions>

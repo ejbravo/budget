@@ -1,27 +1,21 @@
 import React from "react";
+
 import { Form } from "semantic-ui-react";
 import ButtonSaveOrCancel from "./ButtonSaveOrCancel";
 import EntryForm from "./EntryForm";
+import useEntryDetails from "../hooks/useEntryDetails";
 
-interface IProps {
-  description: string;
-  value: string;
-  isExpense: boolean | undefined;
-  setDescription: React.Dispatch<React.SetStateAction<string>>;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
-  setIsExpense: React.Dispatch<React.SetStateAction<boolean>>;
-  addEntry: () => void;
-}
+const NewEntryForm = () => {
+  const {
+    description,
+    setDescription,
+    value,
+    setValue,
+    isExpense,
+    setIsExpense,
+    newEntry,
+  } = useEntryDetails();
 
-const NewEntryForm = ({
-  description,
-  value,
-  isExpense,
-  setDescription,
-  setValue,
-  setIsExpense,
-  addEntry,
-}: IProps) => {
   return (
     <Form unstackable>
       <EntryForm
@@ -32,7 +26,7 @@ const NewEntryForm = ({
         setValue={setValue}
         setIsExpense={setIsExpense}
       />
-      <ButtonSaveOrCancel addEntry={addEntry} />
+      <ButtonSaveOrCancel addEntry={newEntry} />
     </Form>
   );
 };

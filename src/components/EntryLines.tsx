@@ -1,23 +1,16 @@
 import React, { Fragment } from "react";
-import { IEntry } from "../App";
+import { IEntry } from "../utils/interfaces";
 import EntryLine from "./EntryLine";
 
 interface IProps {
   entries: IEntry[];
-  deleteEntry: (id: number) => void;
-  editEntry: (id: number) => void;
 }
 
-const EntryLines = ({ entries, deleteEntry, editEntry }: IProps) => {
+const EntryLines = ({ entries }: IProps) => {
   return (
     <Fragment>
       {entries.map((entry, key) => (
-        <EntryLine
-          key={entry.id}
-          entry={entry}
-          deleteEntry={deleteEntry}
-          editEntry={editEntry}
-        />
+        <EntryLine key={entry.id} entry={entry} />
       ))}
     </Fragment>
   );
