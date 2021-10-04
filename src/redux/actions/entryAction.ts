@@ -2,7 +2,9 @@ import { IEntry } from "../../utils/interfaces";
 
 export const types = {
   ADD_ENTRY: "ADD_ENTRY",
+  ADD_ENTRY_RESULT: "ADD_ENTRY_RESULT",
   DELETE_ENTRY: "DELETE_ENTRY",
+  DELETE_ENTRY_RESULT: "DELETE_ENTRY_RESULT",
   EDIT_ENTRY: "EDIT_ENTRY",
   GET_ENTRY: "GET_ENTRY",
   GET_ENTRIES: "GET_ENTRIES",
@@ -12,7 +14,9 @@ export const types = {
 
 const {
   ADD_ENTRY,
+  ADD_ENTRY_RESULT,
   DELETE_ENTRY,
+  DELETE_ENTRY_RESULT,
   EDIT_ENTRY,
   GET_ENTRY,
   GET_ENTRIES,
@@ -25,8 +29,18 @@ const addEntry = (entry: IEntry) => ({
   payload: entry,
 });
 
+const addEntryResult = (entry: IEntry) => ({
+  type: ADD_ENTRY_RESULT,
+  payload: entry,
+});
+
 const deleteEntry = (id: string) => ({
   type: DELETE_ENTRY,
+  payload: id,
+});
+
+const deleteEntryResult = (id: string) => ({
+  type: DELETE_ENTRY_RESULT,
   payload: id,
 });
 
@@ -56,7 +70,9 @@ const setEntryValue = (entry: IEntry) => ({
 
 export {
   addEntry,
+  addEntryResult,
   deleteEntry,
+  deleteEntryResult,
   editEntry,
   getEntry,
   getEntries,

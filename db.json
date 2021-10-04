@@ -1,39 +1,59 @@
 {
-  "entries": [{
-    "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
-    "description": "Work income"
-  },
-  {
-    "id": "9b1deb4a-3b7d-4bad-9bdd-2b0d7b3dcb5c",
-    "description": "Water bill"
-  },
-  {
-    "id": "9b1deb4a-3b7d-4bad-9bdd-2b0d7b3dcb3b",
-    "description": "Rent"
-  },
-  {
-    "id": "9b1deb4a-3b7d-4bad-9bdd-2b0d7b3dc11a",
-    "description": "Power bill"
-  }],
-  "values": [
+  "entries": [
     {
       "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
-      "value": 1000.0,
-      "isExpense": false
-    },
-    {
-      "id": "9b1deb4a-3b7d-4bad-9bdd-2b0d7b3dcb5c",
-      "value": 20.0,
-      "isExpense": true
+      "description": "Work income"
     },
     {
       "id": "9b1deb4a-3b7d-4bad-9bdd-2b0d7b3dcb3b",
-      "value": 300.0,
+      "description": "Rent"
+    },
+    {
+      "id": "9b1deb4a-3b7d-4bad-9bdd-2b0d7b3dc11a",
+      "description": "Power bill"
+    },
+    {
+      "id": "99f7e7b6-ed29-442d-a9f0-6e54e0dc7888",
+      "description": "New laptop"
+    },
+    {
+      "id": "ccf1b50a-69a6-4845-9ddb-4af441118800",
+      "description": "Extra pay"
+    },
+    {
+      "id": "cb12c017-3263-45cc-a0c7-6ba9ea9f3caa",
+      "description": "book"
+    }
+  ],
+  "values": [
+    {
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+      "value": 1000,
+      "isExpense": false
+    },
+    {
+      "id": "9b1deb4a-3b7d-4bad-9bdd-2b0d7b3dcb3b",
+      "value": 300,
       "isExpense": true
     },
     {
       "id": "9b1deb4a-3b7d-4bad-9bdd-2b0d7b3dc11a",
-      "value": 50.0,
+      "value": 50,
+      "isExpense": true
+    },
+    {
+      "id": "99f7e7b6-ed29-442d-a9f0-6e54e0dc7888",
+      "value": 750,
+      "isExpense": true
+    },
+    {
+      "id": "ccf1b50a-69a6-4845-9ddb-4af441118800",
+      "value": 200,
+      "isExpense": false
+    },
+    {
+      "id": "cb12c017-3263-45cc-a0c7-6ba9ea9f3caa",
+      "value": 20,
       "isExpense": true
     }
   ]

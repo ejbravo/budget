@@ -1,7 +1,6 @@
 import { AnyAction } from "redux";
 import { types } from "../actions/entryAction";
 import { IEntries } from "../../utils/interfaces";
-import { getId } from "../../utils/helpers";
 
 const initialState: IEntries = {
   entries: [],
@@ -10,20 +9,21 @@ const initialState: IEntries = {
 function entryReducer(state = initialState, action: AnyAction) {
   const {
     ADD_ENTRY,
+    ADD_ENTRY_RESULT,
     DELETE_ENTRY,
+    DELETE_ENTRY_RESULT,
     EDIT_ENTRY,
     GET_ENTRIES,
     SET_ENTRIES,
     SET_ENTRY_VALUE,
   } = types;
   switch (action.type) {
-    case ADD_ENTRY:
-      const { id, ...rest } = action.payload;
+    case ADD_ENTRY_RESULT:
       return {
         ...state,
-        entries: [...state.entries, { id: getId(), ...rest }],
+        entries: [...state.entries, action.payload],
       };
-    case DELETE_ENTRY:
+    case DELETE_ENTRY_RESULT:
       return {
         ...state,
         entries: state.entries.filter((item) => item.id !== action.payload),

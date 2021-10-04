@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addEntry, editEntry } from "../redux/actions/entryAction";
 import { closeModal } from "../redux/actions/modalAction";
+import { getId } from "../utils/helpers";
 
 const useEntryDetails = (
   entryDescription = "",
@@ -29,7 +30,7 @@ const useEntryDetails = (
   const newEntry = () => {
     dispatch(
       addEntry({
-        id: "",
+        id: getId(),
         description,
         value: parseFloat(value),
         isExpense,
