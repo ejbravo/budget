@@ -5,9 +5,20 @@ export const types = {
   DELETE_ENTRY: "DELETE_ENTRY",
   EDIT_ENTRY: "EDIT_ENTRY",
   GET_ENTRY: "GET_ENTRY",
+  GET_ENTRIES: "GET_ENTRIES",
+  SET_ENTRIES: "SET_ENTRIES",
+  SET_ENTRY_VALUE: "SET_ENTRY_VALUE",
 };
 
-const { ADD_ENTRY, DELETE_ENTRY, EDIT_ENTRY, GET_ENTRY } = types;
+const {
+  ADD_ENTRY,
+  DELETE_ENTRY,
+  EDIT_ENTRY,
+  GET_ENTRY,
+  GET_ENTRIES,
+  SET_ENTRIES,
+  SET_ENTRY_VALUE,
+} = types;
 
 const addEntry = (entry: IEntry) => ({
   type: ADD_ENTRY,
@@ -29,4 +40,26 @@ const getEntry = (id: string) => ({
   payload: id,
 });
 
-export { addEntry, deleteEntry, editEntry, getEntry };
+const getEntries = () => ({
+  type: GET_ENTRIES,
+});
+
+const setEntries = (entries: IEntry[]) => ({
+  type: SET_ENTRIES,
+  payload: entries,
+});
+
+const setEntryValue = (entry: IEntry) => ({
+  type: SET_ENTRY_VALUE,
+  payload: entry,
+});
+
+export {
+  addEntry,
+  deleteEntry,
+  editEntry,
+  getEntry,
+  getEntries,
+  setEntries,
+  setEntryValue,
+};

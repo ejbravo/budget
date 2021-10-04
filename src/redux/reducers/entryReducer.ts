@@ -8,7 +8,14 @@ const initialState: IEntries = {
 };
 
 function entryReducer(state = initialState, action: AnyAction) {
-  const { ADD_ENTRY, DELETE_ENTRY, EDIT_ENTRY, GET_ENTRY } = types;
+  const {
+    ADD_ENTRY,
+    DELETE_ENTRY,
+    EDIT_ENTRY,
+    GET_ENTRIES,
+    SET_ENTRIES,
+    SET_ENTRY_VALUE,
+  } = types;
   switch (action.type) {
     case ADD_ENTRY:
       const { id, ...rest } = action.payload;
@@ -29,8 +36,22 @@ function entryReducer(state = initialState, action: AnyAction) {
           else return item;
         }),
       };
-    case GET_ENTRY:
-      return {};
+    case GET_ENTRIES:
+      return {
+        ...state,
+        entries: [...state.entries],
+      };
+    case SET_ENTRIES:
+      return { ...state, entries: action.payload };
+    case SET_ENTRY_VALUE:
+      return {
+        ...state,
+        entries: state.entries.map((item) => {
+          const { description } = item;
+          if (item.id !== action.payload.id) return item;
+          else return { description, ...action.payload };
+        }),
+      };
     default:
       return state;
   }

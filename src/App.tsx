@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 // redux
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getEntries } from "./redux/actions/entryAction";
 
 // components
 import MainHeader from "./components/MainHeader";
@@ -35,6 +36,12 @@ function App() {
   const entries = useSelector(
     (state: { entries: IEntries }) => state.entries.entries
   );
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getEntries());
+  }, [dispatch]);
 
   useEffect(() => {
     let totalIncome = 0;

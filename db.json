@@ -1,25 +1,40 @@
 {
   "entries": [{
     "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
-    "description": "Work income",
-    "value": 1000.0
+    "description": "Work income"
   },
   {
     "id": "9b1deb4a-3b7d-4bad-9bdd-2b0d7b3dcb5c",
-    "description": "Water bill",
-    "value": 20.0,
-    "isExpense": true
+    "description": "Water bill"
   },
   {
     "id": "9b1deb4a-3b7d-4bad-9bdd-2b0d7b3dcb3b",
-    "description": "Rent",
-    "value": 300.0,
-    "isExpense": true
+    "description": "Rent"
   },
   {
     "id": "9b1deb4a-3b7d-4bad-9bdd-2b0d7b3dc11a",
-    "description": "Power bill",
-    "value": 50.0,
-    "isExpense": true
-  }]
+    "description": "Power bill"
+  }],
+  "values": [
+    {
+      "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+      "value": 1000.0,
+      "isExpense": false
+    },
+    {
+      "id": "9b1deb4a-3b7d-4bad-9bdd-2b0d7b3dcb5c",
+      "value": 20.0,
+      "isExpense": true
+    },
+    {
+      "id": "9b1deb4a-3b7d-4bad-9bdd-2b0d7b3dcb3b",
+      "value": 300.0,
+      "isExpense": true
+    },
+    {
+      "id": "9b1deb4a-3b7d-4bad-9bdd-2b0d7b3dc11a",
+      "value": 50.0,
+      "isExpense": true
+    }
+  ]
 }
