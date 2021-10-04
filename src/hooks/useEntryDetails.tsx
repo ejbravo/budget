@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addEntry, editEntry } from "../redux/actions/entryAction";
 import { closeModal } from "../redux/actions/modalAction";

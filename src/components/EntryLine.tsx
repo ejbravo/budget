@@ -3,7 +3,7 @@ import { Segment, Grid, Icon } from "semantic-ui-react";
 
 import { IEntry } from "../utils/interfaces";
 import { useDispatch } from "react-redux";
-import { deleteEntry, editEntry } from "../redux/actions/entryAction";
+import { deleteEntry } from "../redux/actions/entryAction";
 import { openModal } from "../redux/actions/modalAction";
 
 interface IProps {

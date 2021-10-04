@@ -1,9 +1,13 @@
 import { IEntry } from "../../utils/interfaces";
 
-export const ADD_ENTRY = "ADD_ENTRY";
-export const DELETE_ENTRY = "DELETE_ENTRY";
-export const EDIT_ENTRY = "EDIT_ENTRY";
-export const GET_ENTRY = "GET_ENTRY";
+export const types = {
+  ADD_ENTRY: "ADD_ENTRY",
+  DELETE_ENTRY: "DELETE_ENTRY",
+  EDIT_ENTRY: "EDIT_ENTRY",
+  GET_ENTRY: "GET_ENTRY",
+};
+
+const { ADD_ENTRY, DELETE_ENTRY, EDIT_ENTRY, GET_ENTRY } = types;
 
 const addEntry = (entry: IEntry) => ({
   type: ADD_ENTRY,

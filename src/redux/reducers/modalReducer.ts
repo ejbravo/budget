@@ -1,5 +1,5 @@
 import { AnyAction } from "redux";
-import { OPEN_MODAL, CLOSE_MODAL } from "../actions/modalAction";
+import { types } from "../actions/modalAction";
 import { IModal } from "../../utils/interfaces";
 
 const initialState: IModal = {
@@ -7,6 +7,7 @@ const initialState: IModal = {
 };
 
 function modalReducer(state = initialState, action: AnyAction) {
+  const { OPEN_MODAL, CLOSE_MODAL } = types;
   switch (action.type) {
     case OPEN_MODAL:
       return { ...state, isOpen: true, id: action.payload };

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 // redux
-import { editEntry } from "./redux/actions/entryAction";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 // components
 import MainHeader from "./components/MainHeader";
@@ -37,8 +36,6 @@ function App() {
     (state: { entries: IEntries }) => state.entries.entries
   );
 
-  const dispatch = useDispatch();
-
   useEffect(() => {
     let totalIncome = 0;
     let totalExpense = 0;
@@ -54,7 +51,7 @@ function App() {
   useEffect(() => {
     const _entry = entries.find((item) => item.id === id);
     _entry && setEntry(_entry);
-  }, [id, isOpen]);
+  }, [id, isOpen, entries]);
 
   return (
     <Container style={{ marginTop: "1em", paddingBottom: "1em" }}>

@@ -1,5 +1,9 @@
-export const OPEN_MODAL = "OPEN_MODAL";
-export const CLOSE_MODAL = "CLOSE_MODAL";
+export const types = {
+  OPEN_MODAL: "OPEN_MODAL",
+  CLOSE_MODAL: "CLOSE_MODAL",
+};
+
+const { OPEN_MODAL, CLOSE_MODAL } = types;
 
 const openModal = (id: string) => ({
   type: OPEN_MODAL,
