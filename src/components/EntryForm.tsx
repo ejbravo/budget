@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Segment, Checkbox, Form } from "semantic-ui-react";
+import React, { Fragment } from 'react';
+import { Segment, Checkbox, Form } from 'semantic-ui-react';
 
 interface IProps {
   description: string;
@@ -35,7 +35,7 @@ const EntryForm = ({
           width={4}
           label="Value"
           placeholder="100.00"
-          icon="dollar"
+          icon="euro"
           iconPosition="left"
           value={value}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
@@ -46,7 +46,7 @@ const EntryForm = ({
       <Segment>
         <Checkbox
           toggle
-          label={isExpense ? `Expense` : "Income"}
+          label={isExpense ? `Expense` : 'Income'}
           checked={isExpense}
           onChange={() => setIsExpense(!isExpense)}
         />
