@@ -1,18 +1,18 @@
-import { SagaMiddleware } from "@redux-saga/core";
+import { SagaMiddleware } from '@redux-saga/core';
 // import * as testSage from "./testSaga";
-import * as entriesSaga from "./entriesSaga";
-import * as entriesSagaDeletion from "./entriesSagaDeletion";
-import * as entriesSagaAdd from "./entriesSagaAdd";
+import * as entriesSaga from './entriesSaga';
+import * as entriesSagaDeletion from './entriesSagaDeletion';
+import * as entriesSagaAdd from './entriesSagaAdd';
 
 function initSagas(sagaMiddleware: SagaMiddleware) {
   Object.values(entriesSaga).forEach(
-    <any>sagaMiddleware.run.bind(sagaMiddleware)
+    sagaMiddleware.run.bind(sagaMiddleware) as any
   );
   Object.values(entriesSagaDeletion).forEach(
-    <any>sagaMiddleware.run.bind(sagaMiddleware)
+    sagaMiddleware.run.bind(sagaMiddleware) as any
   );
   Object.values(entriesSagaAdd).forEach(
-    <any>sagaMiddleware.run.bind(sagaMiddleware)
+    sagaMiddleware.run.bind(sagaMiddleware) as any
   );
 }
 

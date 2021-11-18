@@ -1,6 +1,6 @@
-import React from "react";
-import { SemanticCOLORS, Statistic } from "semantic-ui-react";
-import { StatisticSizeProp } from "semantic-ui-react/dist/commonjs/views/Statistic/Statistic";
+import React from 'react';
+import { SemanticCOLORS, Statistic } from 'semantic-ui-react';
+import { StatisticSizeProp } from 'semantic-ui-react/dist/commonjs/views/Statistic/Statistic';
 
 interface IProps {
   title: string;
@@ -12,13 +12,13 @@ interface IProps {
 const DisplayBalance = ({
   title,
   value,
-  color = "black",
-  size = "tiny",
+  color = 'black',
+  size = 'tiny',
 }: IProps) => {
   return (
     <Statistic size={size} color={color}>
-      <Statistic.Label style={{ textAlign: "left" }}>{title}:</Statistic.Label>
-      <Statistic.Value>{isNaN(value) ? 0 : value}$</Statistic.Value>
+      <Statistic.Label style={{ textAlign: 'left' }}>{title}:</Statistic.Label>
+      <Statistic.Value>{isNaN(value) ? 0 : value}€</Statistic.Value>
     </Statistic>
   );
 };

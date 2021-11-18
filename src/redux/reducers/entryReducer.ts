@@ -1,6 +1,6 @@
-import { AnyAction } from "redux";
-import { types } from "../actions/entryAction";
-import { IEntries } from "../../utils/interfaces";
+import { AnyAction } from 'redux';
+import { types } from '../actions/entryAction';
+import { IEntries } from '../../utils/interfaces';
 
 const initialState: IEntries = {
   entries: [],
@@ -8,9 +8,7 @@ const initialState: IEntries = {
 
 function entryReducer(state = initialState, action: AnyAction) {
   const {
-    ADD_ENTRY,
     ADD_ENTRY_RESULT,
-    DELETE_ENTRY,
     DELETE_ENTRY_RESULT,
     EDIT_ENTRY,
     GET_ENTRIES,
